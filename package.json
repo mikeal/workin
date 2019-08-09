@@ -10,6 +10,10 @@
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
   "license": "(Apache-2.0 AND MIT)",
   "devDependencies": {
-    "aegir": "^20.0.0"
+    "aegir": "^20.0.0",
+    "tsame": "^2.0.1"
+  },
+  "dependencies": {
+    "bytesish": "^0.3.1"
   }
 }

@@ -1,4 +1,5 @@
 'use strict'
+/* globals whandler */
 const assert = require('assert')
 const tsame = require('tsame')
 const { it } = require('mocha')
@@ -8,6 +9,11 @@ const test = it
 
 const same = (x, y) => assert.ok(tsame(x, y))
 
-test('basic ', async () => {
+const req = path => ({ method: 'GET', url: `http://localhost${path}` })
 
+test('basic ', async () => {
+  main(request => {
+    return 'pass'
+  })
+  same(await whandler(req()), 'pass')
 })

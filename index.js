@@ -52,9 +52,11 @@ const main = (handler, ...methods) => {
   addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
   })
+  window.whandler = handleRequest
 }
 const jsonHeaders = { 'Content-Type': 'application/json' }
 main.json = o => Response(JSON.stringify(o), { status: 200, headers: jsonHeaders })
 main.register = main
+main.reader = reader
 
 module.exports = main
