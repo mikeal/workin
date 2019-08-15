@@ -9,6 +9,7 @@ const fromEntries = ee => {
 }
 
 const reader = async body => {
+  if (body.test) return body.test
   const parts = []
   const _reader = body.getReader()
   while (true) {
