@@ -29,7 +29,6 @@ test('basic error', async () => {
   const body = await main.reader(resp.body)
   const msg = 'Error: test2\nLogs:\n2019-08-10 00:02:58\ntest1'
   const str = bytes.toString(body)
-  console.error(JSON.stringify(str))
   same(str.slice(0, 19), msg.slice(0, 19))
   same(str.slice(38), msg.slice(38))
 })
