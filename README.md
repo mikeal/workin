@@ -15,7 +15,7 @@ workin(async event => {
 Catches errors:
 
 ```javascript
-main(asycn event => {
+workin(async event => {
   request.log('debugging!')
   throw new Error('Big error!')
 })
