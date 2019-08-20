@@ -6,7 +6,8 @@ Usage:
 
 ```javascript
 const workin = require('workin')
-workin(async request => {
+workin(async event => {
+  const request = event.request
   return workin.json({ hello: 'world' })
 })
 ```
@@ -14,7 +15,7 @@ workin(async request => {
 Catches errors:
 
 ```javascript
-main(asycn request => {
+main(asycn event => {
   request.log('debugging!')
   throw new Error('Big error!')
 })
