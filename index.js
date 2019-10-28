@@ -1,6 +1,7 @@
 'use strict'
 /* globals Response, addEventListener */
 const bytes = require('bytesish')
+const kv = require('./kv')
 
 const fromEntries = ee => {
   const oo = {}
@@ -56,7 +57,7 @@ const main = (handler, ...methods) => {
   addEventListener('fetch', event => {
     event.respondWith(handleRequest(event))
   })
-  window.whandler = handleRequest
+  return handleRequest
 }
 const jsonHeaders = { 'Content-Type': 'application/json' }
 main.json = o => new Response(JSON.stringify(o), { status: 200, headers: jsonHeaders })
@@ -64,3 +65,4 @@ main.register = main
 main.reader = reader
 
 module.exports = main
+module.exports.kv = kv
