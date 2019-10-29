@@ -26,4 +26,5 @@ class Database {
 
 module.exports = name => {
   window[name] = new Database()
+  return window[name]
 }
