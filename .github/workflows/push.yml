@@ -15,7 +15,7 @@ jobs:
       with:
         entrypoint: npm
         args: test
-   - name: Publish
+    - name: Publish
       uses: mikeal/merge-release@master
       if: github.ref == 'refs/heads/master'
       env:
