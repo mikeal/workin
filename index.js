@@ -60,7 +60,10 @@ const main = (handler, ...methods) => {
   return handleRequest
 }
 const jsonHeaders = { 'Content-Type': 'application/json' }
-main.json = o => new Response(JSON.stringify(o), { status: 200, headers: jsonHeaders })
+main.json = (o, headers) => {
+  headers = { ...headers, ...jsonHeaders }
+  return new Response(JSON.stringify(o), { status: 200, headers })
+}
 main.register = main
 main.reader = reader
 
